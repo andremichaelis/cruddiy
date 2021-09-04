@@ -22,9 +22,9 @@ $indexfile = <<<'EOT'
 </head>
 <body>
     <section class="pt-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-12">
                     <div class="page-header clearfix">
                         <h2 class="float-left">{TABLE_DISPLAY} Details</h2>
                         <a href="{TABLE_NAME}-create.php" class="btn btn-success float-right">Add New Record</a>
@@ -245,9 +245,9 @@ if(isset($_GET["{TABLE_ID}"]) && !empty($_GET["{TABLE_ID}"])){
 </head>
 <body>
     <section class="pt-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-8 mx-auto">
+                <div class="col-12">
                     <div class="page-header">
                         <h1>View Record</h1>
                     </div>
@@ -323,9 +323,9 @@ if(isset($_POST["{TABLE_ID}"]) && !empty($_POST["{TABLE_ID}"])){
 </head>
 <body>
     <section class="pt-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                <div class="col-12">
                     <div class="page-header">
                         <h1>Delete Record</h1>
                     </div>
@@ -400,9 +400,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <section class="pt-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                <div class="col-12">
                     <div class="page-header">
                         <h2>Create Record</h2>
                     </div>
@@ -531,9 +531,9 @@ if(isset($_POST["{COLUMN_ID}"]) && !empty($_POST["{COLUMN_ID}"])){
 </head>
 <body>
     <section class="pt-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                <div class="col-12">
                     <div class="page-header">
                         <h2>Update Record</h2>
                     </div>
@@ -565,9 +565,9 @@ $errorfile = <<<'EOT'
 </head>
 <body>
     <section class="pt-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-12">
                     <div class="page-header">
                         <h1>Invalid Request</h1>
                     </div>
