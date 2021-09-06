@@ -586,34 +586,75 @@ $errorfile = <<<'EOT'
 EOT;
 
 $startfile = <<<'EOT'
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Select CRUD pages</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <style type="text/css">
-        .page-header h2{
-            margin-top: 0;
-        }
-        table tr td:last-child a{
-            margin-right: 5px;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<title>Select CRUD pages</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style type="text/css">
+		.page-header h2 {
+			margin-top: 0;
+		}
+
+		table tr td:last-child a {
+			margin-right: 5px;
+		}
+	</style>
 </head>
 <body>
-<fieldset>
-<center>
-<legend>Available CRUD pages</legend>
-<div class="form-group">
-    {TABLE_BUTTONS}
-    <!-- TABLE_BUTTONS -->
-</div>
-</center>
-</fieldset>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-3 mx-auto mt-5 alert alert-secondary">
+				<?php
+				session_start();
+				$loginDaten = array(
+					'name' => 'admin',
+					'passwort' => 'admin'
+				);
+
+				if (isset($_POST['loginname']) && isset($_POST['loginpasswort'])) {
+					if (
+						$loginDaten['name'] == $_POST['loginname'] &&
+						$loginDaten['passwort'] == $_POST['loginpasswort']
+					) {
+						$_SESSION['login'] = '5b1ee27c74d10238294563e0b16d4303';
+					}
+				} else if (isset($_POST['logout'])) {
+					$_SESSION['login'] = '';
+				}
+
+				if ($_SESSION['login'] !== '5b1ee27c74d10238294563e0b16d4303') { ?>
+					<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+						<div class="form-group">
+							<label>Username:</label>
+							<input name="loginname" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Passwort:</label>
+							<input name="loginpasswort" class="form-control" type="password"><br>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" class="btn btn-primary" value="Einloggen">
+						</div>
+					</form>
+				<?php } else { ?>
+					<div class="form-group">
+						<a href="trainings-index.php" class="btn btn-primary" role="button">Trainings</a>
+					</div>
+					<hr>
+					<div class="form-group">
+						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+							<input type="submit" name="logout" class="btn btn-primary" value="Logout">
+						</form>
+					</div>
+				<?php } ?>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
 EOT;

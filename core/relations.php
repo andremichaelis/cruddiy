@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['index'])) {
-    
+
     if((isset($_POST['server'])) && $_POST['server'] <> '') {
         $server=trim($_POST['server']);
     } else {
@@ -38,6 +38,13 @@ if(isset($_POST['index'])) {
 
 	$configfile = fopen("app/config.php", "w") or die("Unable to open Config file!");
 	$txt  = "<?php \n";
+
+	$txt .= "session_start(); \n";
+	$txt .= "if (\$_SESSION['login'] !== '5b1ee27c74d10238294563e0b16d4303') { \n";
+	$txt .= "	header('location: index.php'); \n";
+	$txt .= "	exit(); \n";
+	$txt .= "} \n";
+
 	$txt .= "\$db_server = '$server'; \n";
 	$txt .= "\$db_name = '$database'; \n";
 	$txt .= "\$db_user = '$username'; \n";
@@ -77,7 +84,7 @@ if(isset($_POST['submit'])){
 }
 
 if(isset($_POST['addkey'])){
-    $primary = $_POST['primary'];  
+    $primary = $_POST['primary'];
     $fk = $_POST['fk'];
 
     $split_primary=explode('|', $primary);
@@ -146,9 +153,9 @@ if(isset($_POST['addkey'])){
                           <thead>
                             <tr>
                               <?php
-                                $sql = "SELECT i.TABLE_NAME as 'Table Name', k.COLUMN_NAME as 'Foreign Key', 
+                                $sql = "SELECT i.TABLE_NAME as 'Table Name', k.COLUMN_NAME as 'Foreign Key',
                                     k.REFERENCED_TABLE_NAME as 'Primary Table', k.REFERENCED_COLUMN_NAME as 'Primary Key',
-                                    i.CONSTRAINT_NAME as 'Constraint Name', 'Delete' as 'Delete' 
+                                    i.CONSTRAINT_NAME as 'Constraint Name', 'Delete' as 'Delete'
                                         FROM information_schema.TABLE_CONSTRAINTS i
                                         LEFT JOIN information_schema.KEY_COLUMN_USAGE k ON i.CONSTRAINT_NAME = k.CONSTRAINT_NAME
                                         WHERE i.CONSTRAINT_TYPE = 'FOREIGN KEY' AND i.TABLE_SCHEMA = DATABASE()";
@@ -157,7 +164,7 @@ if(isset($_POST['addkey'])){
                                     foreach ($row as $col => $value) {
                                         echo "<th>";
                                         echo $col;
-                                        echo "</th>"; 
+                                        echo "</th>";
 									}
 									echo "</thead><tbody>";
 									mysqli_data_seek($result, 0);
@@ -176,14 +183,14 @@ if(isset($_POST['addkey'])){
 												echo $row['Table Name'] .'">';
 												echo '<input type="hidden" name="fkname" value="';
 												echo $row['Constraint Name'] . '">';
-												echo "<button type='submit' id='singlebutton' name='submit' class='btn btn-danger'>Delete</button>"; 
+												echo "<button type='submit' id='singlebutton' name='submit' class='btn btn-danger'>Delete</button>";
 												echo "</form></td>";
 												echo "</tr>";
 									}
 								} else echo "</thead><tbody><tr><td>No relations found</td></tr>";
                             ?>
                                 </tbody>
-                                </table> 
+                                </table>
                 <div class="text-center">
                     <h4 class="mb-0">Add New Table Relation</h4><br>
                       <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -232,7 +239,7 @@ On this page you can add new or delete existing table relations i.e. foreign key
 <hr>
 <form method="post" action="tables.php">
     <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-success">Continue CRUD Creation Process</button>
-</form>     
+</form>
 </section>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -240,4 +247,3 @@ On this page you can add new or delete existing table relations i.e. foreign key
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
-
