@@ -1,7 +1,7 @@
 <?php
 
 $indexfile = <<<'EOT'
-<!DOCTYPE html>
+<?php require_once "config.php"; require_once "helpers.php";?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,10 +42,6 @@ $indexfile = <<<'EOT'
                     <br>
 
                     <?php
-                    // Include config file
-                    require_once "config.php";
-                    require_once "helpers.php";
-
                     //Get current URL and parameters for correct pagination
                     $protocol = $_SERVER['SERVER_PROTOCOL'];
                     $domain     = $_SERVER['HTTP_HOST'];
@@ -591,7 +587,7 @@ $errorfile = <<<'EOT'
 EOT;
 
 $startfile = <<<'EOT'
-<html lang="en">
+<?php session_start(); ?><html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Select CRUD pages</title>
@@ -612,7 +608,6 @@ $startfile = <<<'EOT'
 		<div class="row">
 			<div class="col-12 col-md-3 mx-auto mt-5 alert alert-secondary">
 				<?php
-				session_start();
 				$loginDaten = array(
 					'name' => 'admin',
 					'passwort' => 'admin'
