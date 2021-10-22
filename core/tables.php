@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CRUD generator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="app/assets/bootstrap.min.css">
+	<link rel="stylesheet" href="app/assets/fontawesome/css/all.min.css">
 </head>
 <body>
 <section class="pt-5">
@@ -54,8 +54,8 @@
                           <input class="mr-1" type="checkbox"  name="table['.$i.'][tablecheckbox]" id="checkboxes-'.$i.'" value="1"><label for="checkboxes-'.$i.'">Generate CRUD</label>
                         </div>
                     </div>
-  
-  
+
+
 <br>';
 
                             $i++;
@@ -75,9 +75,9 @@
 </section>
 <br>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="app/assets/jquery-3.5.1.min.js"></script>
+	<script src="app/assets/popper.min.js"></script>
+	<script src="app/assets/bootstrap.min.js"></script>
 <script>
 $(document).ready(function () {
     $('#checkall').click(function(e) {

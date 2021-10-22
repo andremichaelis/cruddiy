@@ -1,10 +1,10 @@
 <?php
 
 $total_postvars = count($_POST, COUNT_RECURSIVE);
-$max_postvars = ini_get("max_input_vars"); 
+$max_postvars = ini_get("max_input_vars");
 if ($total_postvars >= $max_postvars) {
     echo "Uh oh, it looks like you're trying to use more variables than your PHP settings (<a href='https://www.php.net/manual/en/info.configuration.php#ini.max-input-vars'>max_input_variables</a>) allow! <br>";
-    echo "Go back and choose less tables and/or columns or change your php.ini setting. <br>";      
+    echo "Go back and choose less tables and/or columns or change your php.ini setting. <br>";
     echo "Read <a href='https://betterstudio.com/blog/increase-max-input-vars-limit/'>here</a> how you can increase this limit.<br>";
     echo "Cruddiy will now exit because only part of what you wanted would otherwise be generated. 🙇";
     exit();
@@ -544,8 +544,8 @@ function generate($postdata) {
 <head>
     <title>Generated pages</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="app/assets/bootstrap.min.css">
+	<link rel="stylesheet" href="app/assets/fontawesome/css/all.min.css">
 </head>
 <body>
 <section class="py-5">
@@ -564,6 +564,8 @@ function generate($postdata) {
         </div>
     </div>
 </section>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="app/assets/jquery-3.5.1.min.js"></script>
+<script src="app/assets/popper.min.js"></script>
+<script src="app/assets/bootstrap.min.js"></script>
 </body>
 </html>

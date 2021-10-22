@@ -6,8 +6,8 @@ $indexfile = <<<'EOT'
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/6b773fe9e4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <style type="text/css">
         .page-header h2{
             margin-top: 0;
@@ -170,9 +170,9 @@ $indexfile = <<<'EOT'
             </div>
         </div>
     </section>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="assets/jquery-3.5.1.min.js"></script>
+	<script src="assets/popper.min.js"></script>
+	<script src="assets/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
@@ -241,7 +241,8 @@ if(isset($_GET["{TABLE_ID}"]) && !empty($_GET["{TABLE_ID}"])){
 <head>
     <meta charset="UTF-8">
     <title>View Record</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 </head>
 <body>
     <section class="pt-5">
@@ -259,9 +260,9 @@ if(isset($_GET["{TABLE_ID}"]) && !empty($_GET["{TABLE_ID}"])){
             </div>
         </div>
     </section>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="assets/jquery-3.5.1.min.js"></script>
+	<script src="assets/popper.min.js"></script>
+	<script src="assets/bootstrap.min.js"></script>
 </body>
 </html>
 EOT;
@@ -319,7 +320,8 @@ if(isset($_POST["{TABLE_ID}"]) && !empty($_POST["{TABLE_ID}"])){
 <head>
     <meta charset="UTF-8">
     <title>View Record</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 </head>
 <body>
     <section class="pt-5">
@@ -343,9 +345,9 @@ if(isset($_POST["{TABLE_ID}"]) && !empty($_POST["{TABLE_ID}"])){
             </div>
         </div>
     </section>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="assets/jquery-3.5.1.min.js"></script>
+	<script src="assets/popper.min.js"></script>
+	<script src="assets/bootstrap.min.js"></script>
 </body>
 </html>
 
@@ -396,7 +398,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Create Record</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 </head>
 <body>
     <section class="pt-5">
@@ -418,9 +421,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </div>
     </section>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="assets/jquery-3.5.1.min.js"></script>
+	<script src="assets/popper.min.js"></script>
+	<script src="assets/bootstrap.min.js"></script>
 </body>
 </html>
 EOT;
@@ -527,7 +530,8 @@ if(isset($_POST["{COLUMN_ID}"]) && !empty($_POST["{COLUMN_ID}"])){
 <head>
     <meta charset="UTF-8">
     <title>Update Record</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 </head>
 <body>
     <section class="pt-5">
@@ -561,7 +565,8 @@ $errorfile = <<<'EOT'
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 </head>
 <body>
     <section class="pt-5">
@@ -578,9 +583,9 @@ $errorfile = <<<'EOT'
             </div>
         </div>
     </section>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="assets/jquery-3.5.1.min.js"></script>
+	<script src="assets/popper.min.js"></script>
+	<script src="assets/bootstrap.min.js"></script>
 </body>
 </html>
 EOT;
@@ -590,7 +595,8 @@ $startfile = <<<'EOT'
 <head>
 	<meta charset="UTF-8">
 	<title>Select CRUD pages</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 	<style type="text/css">
 		.page-header h2 {
 			margin-top: 0;
@@ -623,7 +629,8 @@ $startfile = <<<'EOT'
 					$_SESSION['login'] = '';
 				}
 
-				if ($_SESSION['login'] !== '5b1ee27c74d10238294563e0b16d4303') { ?>
+				if (!array_key_exists('login', $_SESSION) || $_SESSION['login'] !== '5b1ee27c74d10238294563e0b16d4303') { ?>
+					<h2>Login</h2>
 					<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 						<div class="form-group">
 							<label>Username:</label>
@@ -638,8 +645,9 @@ $startfile = <<<'EOT'
 						</div>
 					</form>
 				<?php } else { ?>
+					<h2>Edit</h2>
 					<div class="form-group">
-						<a href="trainings-index.php" class="btn btn-primary" role="button">Trainings</a>
+						<a href="TABLE_NAME-index.php" class="btn btn-primary" role="button">TABLE_NAME (edit in code)</a>
 					</div>
 					<hr>
 					<div class="form-group">
@@ -652,9 +660,9 @@ $startfile = <<<'EOT'
 			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="assets/jquery-3.5.1.min.js"></script>
+	<script src="assets/popper.min.js"></script>
+	<script src="assets/bootstrap.min.js"></script>
 </body>
 </html>
 EOT;

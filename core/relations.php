@@ -39,17 +39,26 @@ if(isset($_POST['index'])) {
 	$configfile = fopen("app/config.php", "w") or die("Unable to open Config file!");
 	$txt  = "<?php \n";
 
-	$txt .= "session_start(); \n";
-	$txt .= "if (\$_SESSION['login'] !== '5b1ee27c74d10238294563e0b16d4303') { \n";
-	$txt .= "	header('location: index.php'); \n";
-	$txt .= "	exit(); \n";
-	$txt .= "} \n";
+	$txt .= "// session_start(); \n";
+	$txt .= "// if (\$_SESSION['login'] !== '5b1ee27c74d10238294563e0b16d4303') { \n";
+	$txt .= "// 	header('location: index.php'); \n";
+	$txt .= "// 	exit(); \n";
+	$txt .= "// } \n";
 
+	$txt .= "if ((isset(\$_SERVER['APP_ENVIRONMENT']) ? \$_SERVER['APP_ENVIRONMENT'] : null) === 'development') { \n";
+	$txt .= "\$db_server = '127.0.0.1'; \n";
+	$txt .= "\$db_name = 'test_test'; \n";
+	$txt .= "\$db_user = 'root'; \n";
+	$txt .= "\$db_password = 'root'; \n";
+	$txt .= "\$no_of_records_per_page = $numrecordsperpage; \n\n";
+	$txt .= "} else { \n";
 	$txt .= "\$db_server = '$server'; \n";
 	$txt .= "\$db_name = '$database'; \n";
 	$txt .= "\$db_user = '$username'; \n";
 	$txt .= "\$db_password = '$password'; \n";
 	$txt .= "\$no_of_records_per_page = $numrecordsperpage; \n\n";
+	$txt .= "} \n";
+
 	$txt .= "\$link = mysqli_connect(\$db_server, \$db_user, \$db_password, \$db_name); \n";
 
     $txt .= '$query = "SHOW VARIABLES LIKE \'character_set_database\'";' ."\n";
@@ -138,8 +147,8 @@ if(isset($_POST['addkey'])){
 <head>
     <title>Select Relations</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="cruddiy.css">
+    <link rel="stylesheet" href="app/assets/bootstrap.min.css">
+	<link rel="stylesheet" href="app/assets/fontawesome/css/all.min.css">
 </head>
 <body>
 <section class="py-5">
@@ -242,8 +251,8 @@ On this page you can add new or delete existing table relations i.e. foreign key
 </form>
 </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="app/assets/jquery-3.5.1.min.js"></script>
+<script src="app/assets/popper.min.js"></script>
+<script src="app/assets/bootstrap.min.js"></script>
 </body>
 </html>
